@@ -9,6 +9,8 @@ public class SpawnManager : MonoBehaviour
     private float repeatRate = 2f;
     private PlayerController playerControllerScript;
 
+    public GameObject[] objectPrefabs;
+    private int objectIndex;
     private void Start()
     {
         playerControllerScript = FindObjectOfType<PlayerController>();
