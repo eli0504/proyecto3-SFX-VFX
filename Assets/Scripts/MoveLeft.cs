@@ -18,16 +18,16 @@ public class MoveLeft : MonoBehaviour
     {
         if (!playerControllerScript.gameOver)
         {
-            transform.Translate(Vector3.left * Time.deltaTime * speed);
+            transform.Translate(Vector3.left * Time.deltaTime * speed, Space.World);
         }
 
-        
-       if (playerControllerScript.gameOver)
+
+        if (playerControllerScript.gameOver)
         {
-           CancelInvoke("SpawnObstacle");
+            CancelInvoke("SpawnObstacle");
         }
 
-       if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
+        if (transform.position.x < leftBound && gameObject.CompareTag("Obstacle"))
         {
             Destroy(gameObject);
         }
